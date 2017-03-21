@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context="com.karmies.karmiesexample.MainActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/messages_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/karmies_layout"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp" />
+
+    <RelativeLayout
+        android:id="@+id/karmies_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <com.karmies.karmiessdk.view.selector.SelectorImageButton
+            android:id="@+id/selector_image_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            app:karmiesParentView="@+id/karmies_layout" />
+
+        <com.karmies.karmiessdk.view.KarmiesEditText
+            android:id="@+id/custom_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/karmies_edit_text_margin_left"
+            android:layout_marginRight="@dimen/karmies_edit_text_margin_right"
+            android:layout_toLeftOf="@+id/send_image_button"
+            android:layout_toRightOf="@+id/selector_image_button" />
+
+        <com.karmies.karmiessdk.view.SendImageButton
+            android:id="@+id/send_image_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>
